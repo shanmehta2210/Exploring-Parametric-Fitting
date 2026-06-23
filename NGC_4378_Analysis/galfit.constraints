@@ -1,0 +1,6 @@
+
+# Component/Parameter constraint file
+#
+# Par   Comp      Type      Value     # Comment
+1       1_2       offset    0.0       # Force X-center of Bulge (1) and Disk (2) to match
+2       1_2       offset    0.0       # Force Y-center of Bulge (1) and Disk (2) to match

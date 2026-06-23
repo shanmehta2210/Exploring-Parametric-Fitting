@@ -1,0 +1,72 @@
+
+================================================================================
+# IMAGE and GALFIT CONTROL PARAMETERS
+A) Science_Output/NGC_3938_r_cutout.fits                # Input data image (FITS file)
+B) Science_Output/NGC_3938_galfit_nopsf.fits               # Output data image block
+C) Science_Output/NGC_3938_r_sigma_cutout.fits                # Sigma image name (made from invvar)
+D) none                  # Input PSF image (type none if not used)
+E) 1                            # PSF fine sampling factor (relative to data)
+F) none                # Bad pixel mask (type none if not used)
+G) galfit.constraints           # File with parameter constraints
+H) 1 1908 1 1908    # Image region to fit (xmin xmax ymin ymax)
+I) 25 25        # Size of the convolution box (x y)
+J) 22.5                         # Magnitude photometric zeropoint
+K) 0.262  0.262                 # Plate scale (dx dy)    [arcsec per pixel]
+O) regular                      # Display type (regular, curses, both)
+P) 0                            # Choose: 0=optimize, 1=model, 2=imgblock, 3=subcomps
+
+# INITIAL FITTING PARAMETERS
+#
+#   par)    par value(s)    fit toggle(s)    # parameter description 
+# -----------------------------------------------------------------------------
+
+# Object number: 1 disk
+ 0) expdisk        # object type
+ 1) 952.70 952.15 0 0  # Position x, y
+ 3) 10.24       0      # Integrated magnitude
+ 4) 159.41       0      # R_s (Disk Scale Length) -- NOT R_e
+ 9) 0.998        0      # Axis ratio (b/a)
+10) -159.10       0      # Position angle (PA)
+F1)  0.02 111.98   0 0
+F2)  -0.03  3.36   0 0
+F5)  0.02   12.20  0 0
+
+# Object number: 2 spiral
+ 0) sersic                  #  object type
+ 1) 952.7  974.00  0 0     #  position x, y
+ 3) 12.23         0            #  Integrated magnitude (split for init)
+ 4) 188.11        0            #  R_e (effective radius)   [pixels]
+ 5) 0.46          0             #  Sersic index n 
+ 9) 0.72          0            #  axis ratio (b/a)  
+10) -39.85        0            #  position angle (PA) [deg]
+R0) power       # PA rotation func. (power, log, none)
+R1) -1 0       # Spiral inner radius [pixels]
+R2) 238.15 0       # Spiral outer radius [pixels]
+R3) 394.74  0       # Cumul. rotation out to outer radius [degrees]
+R4) 0.76  0       # Asymptotic spiral powerlaw
+R9) 0.1 0       # Inclination to L.o.S. [degrees]
+F1) -0.12  149.33  0 0
+F3)  0.17   17.75   0 0
+F4)  0.05  -10.73   0 0 
+F5) -0.16   12.68   0 0
+F6) -0.07   12.45   0 0
+
+# Object number: 4 Bulge
+ 0) sersic                  #  object type
+ 1) 952.9  954.0  0 0     #  position x, y
+ 3) 13.08        0            #  Integrated magnitude (split for init)
+ 4) 33.06        0            #  R_e (effective radius)   [pixels]
+ 5) 1.34         0            #  Sersic index n 
+ 9) 0.62         0            #  axis ratio (b/a)  
+10) -172.75      0            #  position angle (PA) [deg]
+F1) -0.07  167.73  0 0 
+F2) -0.24  89.19   0 0 
+
+# Object number: 3 
+ 0) sky                     #  object type
+ 1) 6.61e-04      0              #  sky background at center [ADUs]
+ 2) 0.0000      0           #  dsky/dx (sky gradient in x)
+ 3) 0.0000      0           #  dsky/dy (sky gradient in y)
+ Z) 0                       #  output option (0 = resid., 1 = Don't subtract) 
+
+================================================================================

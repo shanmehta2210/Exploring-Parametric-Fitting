@@ -1,0 +1,58 @@
+
+================================================================================
+# IMAGE and GALFIT CONTROL PARAMETERS
+A) Science_Output/NGC_3245_r_cutout.fits      # Input data image (FITS file)
+B) Science_Output/NGC_3245_galfit_run3.fits   # Output data image block
+C) Science_Output/NGC_3245_r_sigma_cutout.fits # Sigma image name (made from invvar)
+D) Science_Output/PSF_Output/NGC_3245_final_psf.fits # Input PSF image
+E) 1                                          # PSF fine sampling factor (relative to data)
+F) none                                       # Bad pixel mask
+G) none                                        # File with parameter constraints
+H) 1 1145 1 1145                              # Image region to fit (xmin xmax ymin ymax)
+I) 25 25                                      # Size of the convolution box (x y)
+J) 22.5                                       # Magnitude photometric zeropoint
+K) 0.262  0.262                               # Plate scale (dx dy)
+O) regular                                    # Display type
+P) 0                                          # Choose: 0=optimize, 1=model, 2=imgblock, 3=subcomps
+
+# INITIAL FITTING PARAMETERS
+#
+#   par)    par value(s)    fit toggle(s)    # parameter description 
+# -----------------------------------------------------------------------------
+
+# Object number: 1 (PSF / Nucleus)
+ 0) psf                    #  object type
+ 1) 567.00 568.00  1 1     #  position x, y (Centered)
+ 3) 14.00       1          #  Integrated magnitude (Guess)
+ Z) 0                      #  output option
+
+# Object number: 2 (Bulge - from Run 2)
+# Run 2: n=1.54, Re=17.56, mag=12.07, ar=0.69, pa=-3.93
+ 0) sersic                 #  object type
+ 1) 567.00 568.10  1 1     #  position x, y
+ 3) 12.07       1          #  Integrated magnitude
+ 4) 17.56       1          #  R_e (effective radius)   [pixels]
+ 5) 1.54        1          #  Sersic index n
+ 9) 0.69        1          #  axis ratio (b/a)  
+10) -3.93       1          #  position angle (PA) [deg]
+ Z) 0                      #  output option
+
+# Object number: 3 (Disk - from Run 2)
+# Run 2: n=1.00, Re=132.47, mag=11.06, ar=0.51, pa=-3.01
+ 0) sersic                 #  object type
+ 1) 567.00 569.84  1 1     #  position x, y
+ 3) 11.06       1          #  Integrated magnitude
+ 4) 132.47      1          #  R_e (effective radius)   [pixels]
+ 5) 1.00        1          #  Sersic index n (Free)
+ 9) 0.51        1          #  axis ratio (b/a)  
+10) -3.01       1          #  position angle (PA) [deg]
+ Z) 0                      #  output option
+
+# Object number: 4 (Sky - from Run 2)
+ 0) sky                    #  object type
+ 1) 2.60e-03    1          #  sky background at center [ADUs]
+ 2) 0.0000      0          #  dsky/dx (sky gradient in x)
+ 3) 0.0000      0          #  dsky/dy (sky gradient in y)
+ Z) 0                      #  output option
+
+================================================================================

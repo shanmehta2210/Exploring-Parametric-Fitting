@@ -1,0 +1,66 @@
+
+================================================================================
+# IMAGE and GALFIT CONTROL PARAMETERS
+A) Science_Output/NGC_5846_r_cutout.fits                # Input data image (FITS file)
+B) Science_Output/NGC_5846_galfit_nopsf.fits               # Output data image block
+C) Science_Output/NGC_5846_r_sigma_cutout.fits                # Sigma image name (made from invvar)
+D) none                                   # Input PSF image (type none if not used)
+E) 1                            # PSF fine sampling factor (relative to data)
+F) none                 # Bad pixel mask (type none if not used)
+G) galfit.constraints           # File with parameter constraints
+H) 1 1145 1 1145    # Image region to fit (xmin xmax ymin ymax)
+I) 50 50        # Size of the convolution box (x y)
+J) 22.5                         # Magnitude photometric zeropoint
+K) 0.262  0.262                 # Plate scale (dx dy)    [arcsec per pixel]
+O) regular                      # Display type (regular, curses, both)
+P) 0                            # Choose: 0=optimize, 1=model, 2=imgblock, 3=subcomps
+
+# INITIAL FITTING PARAMETERS
+#
+#   par)    par value(s)    fit toggle(s)    # parameter description 
+# -----------------------------------------------------------------------------
+
+# Object number: 1 (NGC 5846 Bulge)
+ 0) sersic                  #  object type
+ 1) 573  574  0 0     #  position x, y
+ 3) 11.89         1            #  Integrated magnitude 
+ 4) 27.53          1            #  R_e (effective radius)   [pixels]
+ 5) 1.27        1            #  Sersic index n (Free)
+ 9) 0.93       1            #  axis ratio (b/a)  
+10) 86.0      1            #  position angle (PA) [deg]
+
+# Object number: 2 (NGC 5846 disk)
+ 0) sersic                  #  object type
+ 1) 573  574  0 0     #  position x, y (hard linked)
+ 3) 10.17       1            #  Integrated magnitude 
+ 4) 256.21      1            #  R_e (effective radius)   [pixels]
+ 5) 1       0            #  Sersic index n (Free, init 1)
+ 9) 0.94       1            #  axis ratio (b/a)  
+10) 54.04       1            #  position angle (PA) [deg]
+
+# Object number: 3 (NGC 5846 Disk)
+0) sersic                  #  object type
+1) 573  574  0 0     #  position x, y (hard linked)
+3) 11.82          1            #  Integrated magnitude 
+4) 77.03       1            #  R_e (effective radius)   [pixels]
+5) 0.5        1            #  Sersic index n (Free, init 1)
+9) 0.95       1            #  axis ratio (b/a)  
+10) 47.4      1            #  position angle (PA) [deg]
+
+# Object number: 4 
+ 0) sersic                  #  object type
+ 1) 579  425  0 0     #  position x, y (from catalog)
+ 3) 13.18        0            #  Integrated magnitude 
+ 4) 12.9         0            #  R_e (effective radius)   [pixels]
+ 5) 1.49         0            #  Sersic index n (Free)
+ 9) 0.79         0            #  axis ratio (b/a)  
+10) 47.28        0            #  position angle (PA) [deg]
+
+# Object number: 5 (Sky)
+ 0) sky                     #  object type
+ 1) 0.0025      1           #  sky background at center [Fixed to Corner Median]
+ 2) 0.0000      0           #  dsky/dx (sky gradient in x)
+ 3) 0.0000      0           #  dsky/dy (sky gradient in y)
+ Z) 0                       #  output option (0 = resid., 1 = Don't subtract) 
+
+================================================================================

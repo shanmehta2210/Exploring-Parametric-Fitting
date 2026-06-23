@@ -1,0 +1,35 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.Python
+
+# Large survey data
+**/Input_Bricks/
+*.fits.fz
+
+# Science FITS (local only)
+*.fits
+*.cat
+*.ldac
+*.psf
+
+# GALFIT working files
+**/_working/
+galfit.[0-9]*
+fit.log
+
+# Generated exports
+Google_Drive_Data_Package/
+
+# Archive (local reference)
+archive/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# Keep tracked figures explicitly
+!figures/**/*.png
